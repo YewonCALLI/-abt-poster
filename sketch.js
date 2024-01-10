@@ -11,7 +11,7 @@ let size2;
 function preload(){
 	image1 = loadImage('title.svg');
 	image2 = loadImage('title2-2.svg');
-	image3 = loadImage('title2.svg');
+	image3 = loadImage('title3.svg');
 	image4 = loadImage('logo.png');
 }
 
