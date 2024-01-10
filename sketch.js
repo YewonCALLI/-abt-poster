@@ -17,7 +17,7 @@ function preload(){
 
 function setup() {
 	if(windowWidth < 990) {
-        size = 800;
+        size = 500;
 		size2 = windowHeight*0.7;
     } else {
         size = 500;
@@ -131,13 +131,13 @@ function backInTheDay(x, y) {
 }
 
 function windowResized() {
-	if(windowWidth < 550) {
-        size = windowWidth;
-		size2 = windowHeight*0.9;
+	if(windowWidth < 990) {
+        size = 500;
+		size2 = windowHeight*0.7;
     } else {
         size = 500;
+		size2 = windowHeight*0.9;
     }
-	resizeCanvas(size, size2);
 }
 
 
