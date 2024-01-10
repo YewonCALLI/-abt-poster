@@ -10,15 +10,15 @@ let size2;
 
 function preload(){
 	image1 = loadImage('title.svg');
-	image2 = loadImage('title2.svg');
-	image3 = loadImage('title3.svg');
+	image2 = loadImage('title2-2.svg');
+	image3 = loadImage('title2.svg');
 	image4 = loadImage('logo.png');
 }
 
 function setup() {
 	if(windowWidth < 990) {
         size = 500;
-		size2 = windowHeight*0.7;
+		size2 = windowHeight*0.9;
     } else {
         size = 500;
 		size2 = windowHeight*0.9;
@@ -73,7 +73,7 @@ function draw() {
 	
 	imageMode(CENTER);
 	image(image1, width/2, 160, 450, 270);
-	image(image2, width-15, height-170, 15, 300);
+	image(image2, width-20, height-170, 15, 300);
 	image(image4, width-25, 20, 36,24);
 	imageMode(LEFT);
 	image(image3, 140,height-125, 89.6*3, 79.2*3);
