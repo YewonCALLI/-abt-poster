@@ -1,6 +1,17 @@
 let lapse = 0;  
 let pg;
 let pg2;
+let image1;
+let image2;
+let image3;
+let image4;
+
+function preload(){
+	image1 = loadImage('title.svg');
+	image2 = loadImage('title2.svg');
+	image3 = loadImage('title3.svg');
+	image4 = loadImage('logo.png');
+}
 
 function setup() {
   pg2 = createCanvas(500, windowHeight*0.9);
@@ -28,24 +39,22 @@ function draw() {
 	// 	  pg.ellipse(x+10+random(-60,60),450+frameCount*5+random(-110,110),frameCount/33,frameCount/55,5)
 	//   }
 	// }
-   background(255);
-  frameRate(3);
-  image(pg,0,0);
+	background("white");
+  	frameRate(3);
+  	image(pg,0,0);
   
-  stroke("hotpink");
-	for (let i = 0; i < 200; i++) {
-		let x = randomGaussian(0.5, 0.13) * width;
-		let y = randomGaussian(0.5, 0.13) * height;
+  stroke("#00FF9D");
+	for (let i = 0; i < 300; i++) {
+		let x = randomGaussian(0.5, 0.18) * width;
+		let y = randomGaussian(0.5, 0.12) * height;
 		backInTheDay(x, y);
 	}
-  
-  stroke("black");
-  
+
 	for (let i = 0; i < 20; i++) {
-		let x = randomGaussian(0.5, 0.13) * width;
-		let y = randomGaussian(0.5, 0.13) * height;
-		let s = random(width) * random(random());
-		strokeWeight(random(random()));
+		let x = randomGaussian(0.5, 0.18) * width;
+		let y = randomGaussian(0.5, 0.12) * height;
+		let s = random(width) * random(random(1.5));
+		strokeWeight(random(random(3)));
 		if(random()<0.5){
 			square(x, y, s);
 		}else{
@@ -53,14 +62,18 @@ function draw() {
 
 		}
 	}
-
-  
-  
+	
+	imageMode(CENTER);
+	image(image1, 250, 160, 450, 270);
+	image(image2, 475, height-170, 15, 300);
+	image(image4, 475, 20, 36,24);
+	imageMode(LEFT);
+	image(image3, 140,height-125, 89.6*3, 79.2*3);
 }
 
 function backInTheDay(x, y) {
 	let c = int(random(10, 50));
-	let scl = 0.005;
+	let scl = 0.009;
 	let rnd = int(random(4));
 	strokeWeight(random(random(2)));
 	noFill();
@@ -109,8 +122,12 @@ function backInTheDay(x, y) {
 	}
 }
 
-function keyPressed() {
-  if (key === 's') {
-   saveCanvas(pg2, 'myCanvas', 'jpg');
+function windowResized() {
+	resizeCanvas(500, windowHeight*0.9);
   }
-}
+
+// function keyPressed() {
+//   if (key === 's') {
+//    saveCanvas(pg2, 'myCanvas', 'jpg');
+//   }
+// }
