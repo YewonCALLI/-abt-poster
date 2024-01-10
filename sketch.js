@@ -5,6 +5,8 @@ let image1;
 let image2;
 let image3;
 let image4;
+let size;
+let size2;
 
 function preload(){
 	image1 = loadImage('title.svg');
@@ -14,8 +16,15 @@ function preload(){
 }
 
 function setup() {
-  pg2 = createCanvas(500, windowHeight*0.9);
-  pg = createGraphics(500,600);
+	if(windowWidth < 990) {
+        size = 800;
+		size2 = windowHeight*0.7;
+    } else {
+        size = 500;
+		size2 = windowHeight*0.9;
+    }
+	console.log(windowWidth, windowHeight);
+  createCanvas(size, size2);
   background('white');
   rectMode(CENTER);
   
@@ -41,7 +50,6 @@ function draw() {
 	// }
 	background("white");
   	frameRate(3);
-  	image(pg,0,0);
   
   stroke("#00FF9D");
 	for (let i = 0; i < 300; i++) {
@@ -64,9 +72,9 @@ function draw() {
 	}
 	
 	imageMode(CENTER);
-	image(image1, 250, 160, 450, 270);
-	image(image2, 475, height-170, 15, 300);
-	image(image4, 475, 20, 36,24);
+	image(image1, width/2, 160, 450, 270);
+	image(image2, width-15, height-170, 15, 300);
+	image(image4, width-25, 20, 36,24);
 	imageMode(LEFT);
 	image(image3, 140,height-125, 89.6*3, 79.2*3);
 }
@@ -123,8 +131,16 @@ function backInTheDay(x, y) {
 }
 
 function windowResized() {
-	resizeCanvas(500, windowHeight*0.9);
-  }
+	if(windowWidth < 550) {
+        size = windowWidth;
+		size2 = windowHeight*0.9;
+    } else {
+        size = 500;
+    }
+	resizeCanvas(size, size2);
+}
+
+
 
 // function keyPressed() {
 //   if (key === 's') {
