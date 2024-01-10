@@ -18,7 +18,7 @@ function preload(){
 function setup() {
 	if(windowWidth < 990) {
         size = 500;
-		size2 = windowHeight*0.9;
+		size2 = windowHeight*0.7;
     } else {
         size = 500;
 		size2 = windowHeight*0.9;
